@@ -4,7 +4,7 @@
 # Notes:
 #  1) Requires a sysprepped template
 #  2) Requires NAT switch named "NAT vSwitch". Should you want/need, you can create one: https://zahariev.pro/files/hyper-v-nat-switch.html
-# 
+# test
 
 # General constants/variables
 $SourceVHD = 'D:\WindowsTemplates\WIN-SRV-2K19-ST-DE.vhdx'
