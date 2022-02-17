@@ -1,12 +1,12 @@
 #NAT Switch в Hyper-V
-#Постановка: Създаване на NAT vSwitch с адресно пространство 192.168.99.0/24 и Gateway 192.168.99.1
+#Create NAT vSwitch with network 192.168.99.0/24 and Gateway 192.168.99.1
 
-#Стъпки:
+#Steps:
 
-    #Отваряте PowerShell сесия с Run as administrator
-    #Създавате интърнал суич:
+    #Open PowerShell and Run as administrator
+    #Create Internal Switch:
     New-VMSwitch -SwitchName "NAT vSwitch" -SwitchType Internal
-    #Задавате адрес на новосъздадения виртуален интерфейс:
+    #Set IP at new virtual interface:
     New-NetIPAddress -IPAddress 192.168.99.1 -PrefixLength 24 -InterfaceAlias "vEthernet (NAT vSwitch)"
-    #Създавате NAT мрежа с адресно пространство, включващо адреса на виртуалния интерфейс:
+    #Create NAT network:
     New-NetNAT -Name "NAT Network" -InternalIPInterfaceAddressPrefix 192.168.99.0/24
